@@ -2,6 +2,9 @@
 
 Single page application example app in kotlin
 
+## Demo
+https://techprd.github.io/spa-kotlin-js/#/home/
+
 ### dependencies:
 
 https://github.com/techprd/kotlin-material
