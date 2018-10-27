@@ -1,5 +1,7 @@
-import com.techprd.material.components.Grid
 import com.techprd.material.components.Page
+import com.techprd.material.components.data.Tab
+import com.techprd.material.components.layouts.Grid
+import com.techprd.material.components.layouts.Tabs
 import kotlinx.html.button
 import kotlinx.html.classes
 import kotlinx.html.div
@@ -12,7 +14,8 @@ import kotlin.browser.window
 
 class TestPage : Page() {
     override fun build(): HTMLElement {
-        val grid = Grid(4, arrayListOf(
+
+        val content1 = Grid(4, arrayListOf(
                 document.create.div {
                     p {
                         +data.get(0).toString()
@@ -26,7 +29,20 @@ class TestPage : Page() {
                         }
                     }
                 }
-        ))
-        return grid.build()
+        )).build()
+
+        val content2 = content1.cloneNode(true) as HTMLElement
+        val content3 = content1.cloneNode(true) as HTMLElement
+
+        val tabs = Tabs(
+                listOf(
+                        Tab("Starks", content1, true),
+                        Tab("Lannisters", content2, false),
+                        Tab("Targaryens", content3, false)
+                )
+        )
+
+        return tabs.build()
     }
+
 }
