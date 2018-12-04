@@ -31,14 +31,14 @@ class TestPage : Page() {
                 }
         )).build()
 
-        val content2 = content1.cloneNode(true) as HTMLElement
-        val content3 = content1.cloneNode(true) as HTMLElement
+        val content2 = document.create.p { +" Tab Content 2" }
+        val content3 = document.create.p { +" Tab Content 3" }
 
         val tabs = Tabs(
                 listOf(
-                        Tab("Starks", content1, true),
-                        Tab("Lannisters", content2, false),
-                        Tab("Targaryens", content3, false)
+                        Tab("Tab01", content1, true),
+                        Tab("Tab02", content2, false),
+                        Tab("Tab03", content3, false)
                 )
         )
 
