@@ -8,6 +8,7 @@ import pages.Badges
 import pages.Cards
 
 fun main(args: Array<String>) {
+    console.log(KotlinVersion.CURRENT)
 
     val routes = listOf(
             Route("home", HomePage(), "This is home page"),
@@ -27,9 +28,9 @@ fun main(args: Array<String>) {
             .addDrawer(Drawer("Kotlin Material App",
                     listOf(
                             Link("HOME", "#/home/", Icons.person),
-                            Link("BADGES", "#/badges/", Icons.favorite),
-                            Link("CARDS", "#/cards/", Icons.favorite),
-                            Link("TABS", "#/tabs/", Icons.favorite)
+                            Link("BADGES", "#/badges/", Icons.add_alert),
+                            Link("CARDS", "#/cards/", Icons.card_giftcard),
+                            Link("TABS", "#/tabs/", Icons.tab)
                     )),
                     false)
             .start("home")
