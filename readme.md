@@ -16,11 +16,11 @@ https://github.com/techprd/kotlin-material
 ./gradlew clean build
 
 ```
-### run dev server
+### run dev server with auto-reload
 
 ```bash
 
-./gradlew run
+./gradlew run -t
 
 ```
 

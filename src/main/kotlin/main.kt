@@ -4,34 +4,50 @@ import com.techprd.material.components.*
 import com.techprd.material.components.data.Link
 import com.techprd.material.components.layouts.Drawer
 import com.techprd.material.router.*
-import pages.Badges
-import pages.Cards
+import pages.*
 
 fun main(args: Array<String>) {
     console.log(KotlinVersion.CURRENT)
 
     val routes = listOf(
-            Route("home", HomePage(), "This is home page"),
-            Route("badges", Badges(), "passing some data"),
-            Route("cards", Cards(), "passing some data"),
-            Route("tabs", TestPage(), "This is test page")
+        Route("home", HomePage(), "This is home page"),
+        Route("badges", Badges(), "passing some data"),
+        Route("buttons", ButtonsPage(), "This is buttons page"),
+        Route("cards", Cards(), "passing some data"),
+        Route("chips", ChipsPage(), "passing some data"),
+        Route("dialogs", DialogPage(), "passing some data"),
+        Route(
+            "tabs", TabsPage(), "This content is passed in via Route data " +
+                    "to page data which can be used anywhere in the page"
+        )
     )
 
     MaterialApp()
-            .configRouter(RouteOption(RouteMode.HASH, "myapp"))
-            .addRoutes(routes)
-            .addAppBar(AppBar("Kotlin Material App",
-                    listOf(
-                            Link("HOME", "#/home/")
-                    )),
-                    true)
-            .addDrawer(Drawer("Kotlin Material App",
-                    listOf(
-                            Link("HOME", "#/home/", Icons.person),
-                            Link("BADGES", "#/badges/", Icons.add_alert),
-                            Link("CARDS", "#/cards/", Icons.card_giftcard),
-                            Link("TABS", "#/tabs/", Icons.tab)
-                    )),
-                    false)
-            .start("home")
+        .configRouter(RouteOption(RouteMode.HASH, "myapp"))
+        .addRoutes(routes)
+        .addAppBar(
+            AppBar(
+                "Kotlin Material App",
+                listOf(
+                    Link("HOME", "#/home/")
+                )
+            ),
+            true
+        )
+        .addDrawer(
+            Drawer(
+                "Kotlin Material App",
+                listOf(
+                    Link("Home", "#/home/", Icons.person),
+                    Link("Buttons", "#/buttons/", Icons.radio_button_checked),
+                    Link("Badges", "#/badges/", Icons.add_alert),
+                    Link("Cards", "#/cards/", Icons.card_giftcard),
+                    Link("Chips", "#/chips/", Icons.contacts),
+                    Link("Dialogs", "#/dialogs/", Icons.desktop_windows),
+                    Link("Tabs", "#/tabs/", Icons.tab)
+                )
+            ),
+            true
+        )
+        .start("home")
 }

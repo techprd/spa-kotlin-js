@@ -13,12 +13,11 @@ repositories {
 
 dependencies {
     implementation(kotlin("stdlib-js"))
-    implementation("org.jetbrains.kotlinx:kotlinx-html-js:0.6.11")
+    implementation("org.jetbrains.kotlinx:kotlinx-html-js:0.7.1")
     implementation("com.techprd.material:kotlin-material:1.3.71")
 }
 
-kotlin {
-    target {
-        browser {}
+kotlin.target {
+    browser {
     }
 }

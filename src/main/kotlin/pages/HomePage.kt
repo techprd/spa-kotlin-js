@@ -1,36 +1,35 @@
-import com.techprd.material.Icons
+package pages
+
 import com.techprd.material.components.*
-import com.techprd.material.components.layouts.Grid
+import kotlinx.html.*
+import kotlinx.html.dom.create
+import kotlinx.html.js.div
 import org.w3c.dom.HTMLElement
+import kotlin.browser.document
 
 class HomePage : Page() {
 
     override fun build(): HTMLElement {
-
-        val fabButton = button {
-            type = ButtonType.FAB
-            icon = Icons.add
-            isColored = true
-            hasRipple = true
+        return document.create.div {
+            style = "margin:50px"
+            h3 {
+                +"Home Page - under development"
+            }
+            +"More material component will be added soon."
+            hr { }
+            +"Visit: "
+            a {
+                href = "https://github.com/techprd/spa-kotlin-js"
+                +"https://github.com/techprd/spa-kotlin-js"
+            }
+            br { }
+            +"Components are developed under separate package"
+            br { }
+            +"Visit: "
+            a {
+                href = "https://github.com/techprd/kotlin-material"
+                +"https://github.com/techprd/kotlin-material"
+            }
         }
-
-        val miniFabButton = button {
-            type = ButtonType.MINI_FAB
-            icon = Icons.person
-            isColored = true
-            hasRipple = true
-        }
-
-        val flatButton = button {
-            type = ButtonType.RAISED
-            label = "flat button"
-            isColored = true
-            hasRipple = true
-        }
-
-        val grid = Grid(2,
-                arrayListOf(fabButton.build(), miniFabButton.build(), flatButton.build())
-        )
-        return grid.build()
     }
 }
