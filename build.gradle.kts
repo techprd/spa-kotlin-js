@@ -13,6 +13,7 @@ repositories {
 
 dependencies {
     testImplementation(kotlin("test-js"))
+    implementation(kotlin("stdlib-js"))
     implementation("org.jetbrains.kotlinx:kotlinx-html:0.7.2")
     implementation("com.techprd.material:kotlin-material-js:1.5.0")
 }
