@@ -14,7 +14,7 @@ repositories {
 dependencies {
     testImplementation(kotlin("test-js"))
     implementation(kotlin("stdlib-js"))
-    implementation("org.jetbrains.kotlinx:kotlinx-html:0.7.2")
+    implementation("org.jetbrains.kotlinx:kotlinx-html:0.7.3")
     implementation("com.techprd.material:kotlin-material-js:1.5.0")
 }
 
@@ -24,7 +24,19 @@ kotlin {
         browser {
             commonWebpackConfig {
                 cssSupport.enabled = true
+                devtool = "source-map"
             }
+        }
+    }
+}
+
+// fix for Safari browser
+tasks.withType<org.jetbrains.kotlin.gradle.tasks.Kotlin2JsCompile> {
+    doLast {
+        val content = outputFile.readText()
+        outputFile.writer().buffered().use {
+            it.write("if (typeof(HTMLDialogElement) == 'undefined') HTMLDialogElement = {};\n")
+            it.write(content)
         }
     }
 }
