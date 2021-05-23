@@ -6,7 +6,7 @@ import com.techprd.material.components.layouts.Drawer
 import com.techprd.material.router.*
 import pages.*
 
-fun main(args: Array<String>) {
+fun main() {
     console.log(KotlinVersion.CURRENT)
 
     val routes = listOf(

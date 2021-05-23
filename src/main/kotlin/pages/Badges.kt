@@ -5,7 +5,7 @@ import com.techprd.material.components.layouts.Grid
 import kotlinx.html.*
 import kotlinx.html.dom.create
 import org.w3c.dom.HTMLElement
-import kotlin.browser.document
+import kotlinx.browser.document
 
 class Badges : Page() {
 
