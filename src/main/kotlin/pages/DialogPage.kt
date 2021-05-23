@@ -5,7 +5,7 @@ import com.techprd.material.components.button
 import com.techprd.material.components.dialog
 import com.techprd.material.components.layouts.Grid
 import org.w3c.dom.HTMLElement
-import kotlin.browser.document
+import kotlinx.browser.document
 
 class DialogPage : Page() {
     override fun build(): HTMLElement {

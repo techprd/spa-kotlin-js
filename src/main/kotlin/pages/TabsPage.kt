@@ -9,8 +9,8 @@ import kotlinx.html.dom.create
 import kotlinx.html.js.onClickFunction
 import kotlinx.html.p
 import org.w3c.dom.HTMLElement
-import kotlin.browser.document
-import kotlin.browser.window
+import kotlinx.browser.document
+import kotlinx.browser.window
 
 class TabsPage : Page() {
     override fun build(): HTMLElement {

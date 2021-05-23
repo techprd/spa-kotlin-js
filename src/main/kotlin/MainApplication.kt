@@ -1,15 +1,3 @@
-import com.techprd.material.Icons
-import com.techprd.material.MaterialApp
-import com.techprd.material.components.AppBar
-import com.techprd.material.components.data.Link
-import com.techprd.material.components.layouts.Drawer
-import com.techprd.material.router.Route
-import com.techprd.material.router.RouteMode
-import com.techprd.material.router.RouteOption
-import pages.Badges
-import pages.Cards
-import pages.HomePage
-
 class MainApplication : ApplicationBase() {
 
     init {
