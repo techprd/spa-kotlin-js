@@ -31,12 +31,12 @@ kotlin {
     }
 }
 
-// TODO: fix this using HTML 5 polyfill
+// Temporary fix for browsers not supporting HTMLDialogElement
 tasks.withType<org.jetbrains.kotlin.gradle.tasks.Kotlin2JsCompile> {
     doLast {
         val content = outputFile.readText()
         outputFile.writer().buffered().use {
-            it.write("if (typeof(HTMLDialogElement) == 'undefined') HTMLDialogElement = {};\n")
+            it.write("if (typeof(HTMLDialogElement) == 'undefined') HTMLDialogElement = HTMLElement;\n")
             it.write(content)
         }
     }
